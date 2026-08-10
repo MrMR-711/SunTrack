@@ -189,10 +189,6 @@ SunTrack/
 
 ---
 
-Sure, here's the updated English version with the Persian changes applied, and the extra sections removed:
-
----
-
 <details open>
 <summary> 🇺🇸 English </summary>
 
