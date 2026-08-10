@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>طلوع‌یاب | SunTrack</title>
+  <link rel="icon" type="image/png" href="icon.png">
+
+  <!-- Inline theme script: prevents flash of wrong theme on load -->
+  <script>
+    (function() {
+      var savedTheme = null;
+      try { savedTheme = JSON.parse(localStorage.getItem('sunrisetracker_theme')); } catch(e) {}
+      var theme = savedTheme || 'auto';
+      if (theme !== 'auto') {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+      // For 'auto' mode, do NOT set data-theme - let CSS @media (prefers-color-scheme) handle it
+    })();
+  </script>
+
+  <!-- Official Font Awesome Free 7.3.1, stored locally for offline use. -->
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+
+  <!-- App Stylesheets (modular, SoC-based) -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/views.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- Toast Message system -->
+    <div id="toast" class="toast-container"></div>
+
+    <!-- VIEW 1: HOME DASHBOARD -->
+    <main id="viewHome" class="app-view active home-dashboard">
+      <div class="home-page-title" id="lblHomeTitle">خانه</div>
+      <section class="home-feature-card home-feature-primary home-sunrise-card" role="button" tabindex="0" onclick="openAppPage('sunrise')" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openAppPage('sunrise'); }">
+        <span class="home-illustration"><img class="illustration-light" src="images/SunrisePlan-Light.png" alt=""><img class="illustration-dark" src="images/SunrisePlan-Dark.png" alt=""></span>
+        <div class="home-sunrise-content">
+          <span class="home-sunrise-label"><i class="fa-solid fa-sun"></i> <span id="lblHomeSunrise">زمان طلوع</span></span>
+          <strong class="home-sunrise-time" id="homeSunriseTime">--:--</strong>
+          <span class="home-countdown-label" id="lblHomeCountdown">مانده تا بیداری</span>
+          <span class="home-countdown" id="homeCountdown">--:--:--</span>
+          <span class="home-detail-cta"><span id="lblSunrisePage">مشاهده جزئیات برنامه</span> <i class="fa-solid fa-arrow-left"></i></span>
+        </div>
+      </section>
+      <button class="home-feature-card home-feature-primary home-actions-card" onclick="openAppPage('actions')"><span class="home-illustration"><img class="illustration-light" src="images/Pre-departureRoutine-Light.png" alt=""><img class="illustration-dark" src="images/Pre-departureRoutine-Dark.png" alt=""></span><span><strong id="lblActionsPage">اقدامات قبل از خروج</strong><small id="lblActionsPageSub">روتین آماده‌سازی صبحگاهی</small></span></button>
+      <div class="home-feature-grid">
+        <button class="home-feature-card" onclick="openAppPage('calculator')"><span class="home-illustration"><img class="illustration-light" src="images/ManualCalculator-Light.png" alt=""><img class="illustration-dark" src="images/ManualCalculator-Dark.png" alt=""></span><strong id="lblCalculatorPage">محاسبه دستی</strong><small id="lblCalculatorSub">ورود ساعت طلوع</small></button>
+        <button class="home-feature-card" onclick="openAppPage('formula')"><span class="home-illustration"><img class="illustration-light" src="images/FormulaGuide-Light.png" alt=""><img class="illustration-dark" src="images/FormulaGuide-Dark.png" alt=""></span><strong id="lblFormulaPage">راهنمای فرمول</strong><small id="lblFormulaSub">نحوه محاسبه زمان‌ها</small></button>
+      </div>
+    </main>
+
+    <!-- VIEW 2: Sunrise details -->
+    <main id="viewSunrise" class="app-view">
+      <div class="detail-topbar"><button class="view-back-btn" onclick="goHome()"><i class="fa-solid fa-arrow-left"></i></button><span id="lblSunrisePageHeader">برنامه طلوع</span><div class="status-container"><span class="status-text" id="statusText">متصل</span><div class="status-dot online" id="statusDot"></div></div></div>
+
+      <!-- Loader Overlay for Async Operations -->
+      <div class="loader-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+      </div>
+
+      <!-- Results Display Section -->
+      <section id="resultsSection" style="display: none; display: flex; flex-direction: column; gap: 20px;">
+
+        <!-- Sunrise Computed Grid -->
+        <div class="result-grid">
+          <div class="result-item result-item-sunrise">
+            <span class="label"><i class="fa-solid fa-sun" aria-hidden="true"></i> <span id="lblSunriseTime">زمان طلوع خورشید</span></span>
+            <span class="value" id="sunriseTime">--:--</span>
+          </div>
+          <div class="result-item result-item-secondary">
+            <span class="label"><i class="fa-solid fa-clock" aria-hidden="true"></i> <span id="lblWakeTime">زمان بیداری</span></span>
+            <span class="value" id="wakeTime">--:--</span>
+          </div>
+          <div class="result-item result-item-secondary">
+            <span class="label"><i class="fa-solid fa-door-open" aria-hidden="true"></i> <span id="lblLeaveTime">زمان خروج</span></span>
+            <span class="value" id="leaveTime">--:--</span>
+          </div>
+        </div>
+
+        <!-- Location-aware calendar card -->
+        <div class="card">
+          <div class="card-title"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> <span id="lblDatesCard">تاریخ منطقه شما</span></div>
+          <div class="date-grid">
+            <div class="date-item"><span class="label" id="lblToday">امروز</span><span class="value" id="todayDate">—</span></div>
+            <div class="date-item"><span class="label" id="lblTomorrow">فردا</span><span class="value" id="tomorrowDate">—</span></div>
+          </div>
+        </div>
+
+        <!-- Countdown box -->
+        <div id="timerContainer" class="timer-container" style="display: none;">
+          <span class="timer-label" id="lblCountdown">مانده تا زمان بیداری:</span>
+          <span class="timer-val" id="countdown">--:--:--</span>
+        </div>
+
+        <!-- Temperature & Hot Warning Card -->
+        <div class="card">
+          <div class="card-title"><i class="fa-solid fa-temperature-half" aria-hidden="true"></i> <span id="lblWeatherCard">آب و هوای منطقه</span></div>
+          <div class="weather-info">
+            <span id="weatherDisplay" class="weather-temperature">--°C</span>
+          </div>
+          <div id="tempWarning" class="temp-warning-box" style="margin-top: 12px; display: none;"></div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- VIEW: Manual Calculator -->
+    <section id="viewCalculator" class="app-view detail-view calculator-view">
+      <div class="detail-topbar">
+        <button class="view-back-btn" onclick="goHome()"><i class="fa-solid fa-arrow-left"></i></button>
+        <strong id="lblCalculatorPageHeader">محاسبه دستی</strong>
+      </div>
+      <div class="card calculator-input-card">
+        <div class="card-title"><i class="fa-solid fa-calculator"></i> <span id="lblManualInput">زمان طلوع را وارد کنید</span></div>
+        <button class="sunrise-preset-btn" type="button" onclick="applyTodaySunrise()"><i class="fa-solid fa-location-dot"></i> <span id="lblUseTodaySunrise">جای‌گذاری طلوع امروز</span></button>
+        <div class="manual-time-control">
+          <div class="time-input-container">
+            <input id="manualSunrise" class="search-input custom-time-input" type="time" oninput="syncMeridiemToggle()" onchange="syncMeridiemToggle()">
+            <div class="time-input-overlay" onclick="var inp=document.getElementById('manualSunrise'); if(inp.showPicker){inp.showPicker()}else{inp.focus()}">
+              <i class="fa-regular fa-clock"></i>
+              <span id="timeDisplay">--:--</span>
+            </div>
+          </div>
+          <button id="meridiemToggle" class="meridiem-toggle" type="button" onclick="toggleMeridiem()">AM</button>
+        </div>
+        <button class="btn btn-primary calculator-submit" onclick="calculateManual()"><i class="fa-solid fa-calculator"></i> <span id="lblCalculate">محاسبه</span></button>
+      </div>
+      <div id="manualResult" class="calculator-results" style="display:none">
+        <div class="manual-result-card">
+          <span class="manual-result-icon"><i class="fa-solid fa-clock"></i></span>
+          <span class="manual-result-label" id="lblWakeTimeManual">زمان بیداری</span>
+          <strong id="manualWake">--:--</strong>
+          <button class="copy-time-btn" type="button" onclick="copyManualTime('manualWake')"><i class="fa-regular fa-copy"></i> <span id="lblCopy">کپی</span></button>
+        </div>
+        <div class="manual-result-card">
+          <span class="manual-result-icon"><i class="fa-solid fa-car"></i></span>
+          <span class="manual-result-label" id="lblLeaveTimeManual">زمان خروج</span>
+          <strong id="manualLeave">--:--</strong>
+          <button class="copy-time-btn" type="button" onclick="copyManualTime('manualLeave')"><i class="fa-regular fa-copy"></i> <span id="lblCopySecond">کپی</span></button>
+        </div>
+        <div class="card timeline-card">
+          <div class="card-title"><i class="fa-solid fa-chart-column"></i> <span id="lblTimeline">تایم‌لاین برنامه‌ریزی</span></div>
+          <div class="manual-timeline">
+            <div><strong id="timelineWake">--:--</strong><span id="lblTimelineWake">بیداری و روتین · ۵۵ دقیقه قبل از طلوع</span></div>
+            <div><strong id="timelineLeave">--:--</strong><span id="lblTimelineLeave">خروج از منزل · ۳۰ دقیقه قبل از طلوع</span></div>
+            <div><strong id="timelineSunrise">--:--</strong><span id="lblTimelineSunrise">زمان طلوع آفتاب</span></div>
+          </div>
+        </div>
+        <div class="card calculation-params">
+          <div class="card-title"><i class="fa-solid fa-sliders"></i> <span id="lblParameters">پارامترهای محاسبه</span></div>
+          <p id="lblParametersText">تنظیمات فعلی: بیداری ۵۵ دقیقه و خروج ۳۰ دقیقه پیش از طلوع محاسبه می‌شود.</p>
+          <button type="button" id="changeParametersBtn"><i class="fa-solid fa-gear"></i> <span id="lblChangeParameters">تغییر بازه‌های زمانی</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW: Formula Guide -->
+    <section id="viewFormula" class="app-view detail-view formula-view">
+      <div class="detail-topbar">
+        <button class="view-back-btn" onclick="goHome()"><i class="fa-solid fa-arrow-left"></i></button>
+        <strong id="lblFormulaPageHeader">راهنمای فرمول ریاضی</strong>
+      </div>
+      <div class="card formula-card rich-formula-card">
+        <div class="card-title"><i class="fa-solid fa-calculator"></i> <span id="lblFormulaIntro">منطق محاسبه زمان‌ها</span></div>
+        <div class="math-block">
+          <span id="lblFormulaStep1Title">گام ۱ · زمان خروج</span>
+          <strong><b id="formulaSunsetVar">طلوع خورشید</b> − <em id="formulaStep1Time">۳۰ دقیقه</em> = <b id="formulaStep1Result">زمان خروج</b></strong>
+        </div>
+        <div class="math-block">
+          <span id="lblFormulaStep2Title">گام ۲ · زمان بیداری</span>
+          <strong><b id="formulaStep2Start">زمان خروج</b> − <em id="formulaStep2Time">۲۵ دقیقه</em> = <b id="formulaStep2Result">زمان بیداری</b></strong>
+        </div>
+      </div>
+      <div class="card formula-example">
+        <div class="card-title"><i class="fa-solid fa-lightbulb"></i> <span id="lblFormulaExample">مثال واقعی محاسبه</span></div>
+        <p id="lblFormulaAssumption">فرض: طلوع خورشید = ۰۵:۲۲</p>
+        <div class="example-line"><span id="lblExampleLeave">گام ۱ · خروج</span><strong><span id="exampleLeaveStart">۰۵:۲۲</span> − <span id="exampleLeaveTime">۳۰</span> = <b id="exampleLeaveResult">۰۴:۵۲</b></strong></div>
+        <div class="example-line"><span id="lblExampleWake">گام ۲ · بیداری</span><strong><span id="exampleWakeStart">۰۴:۵۲</span> − <span id="exampleWakeTime">۲۵</span> = <b id="exampleWakeResult">۰۴:۲۷</b></strong></div>
+      </div>
+      <div class="card formula-timeline-card">
+        <div class="card-title"><i class="fa-solid fa-chart-line"></i> <span id="lblFormulaTimeline">تایم‌لاین معکوس</span></div>
+        <div class="reverse-timeline">
+          <div><b id="reverseTimelineWake">۰۴:۲۷</b><span id="lblReverseWake">بیداری و روتین</span></div>
+          <div><b id="reverseTimelineLeave">۰۴:۵۲</b><span id="lblReverseLeave">خروج از منزل</span></div>
+          <div><b id="reverseTimelineSunrise">۰۵:۲۲</b><span id="lblReverseSunrise">طلوع خورشید</span></div>
+        </div>
+      </div>
+      <div class="card formula-logic-card">
+        <div class="card-title"><i class="fa-solid fa-circle-question"></i> <span id="lblFormulaWhy">چرا این مقادیر؟</span></div>
+        <p id="lblFormulaWhyLeave"><i class="fa-solid fa-car"></i> ۳۰ دقیقه پیش از طلوع: زمان لازم برای حرکت، جابه‌جایی و استقرار در موقعیت.</p>
+        <p id="lblFormulaWhyWake"><i class="fa-solid fa-mug-hot"></i> ۲۵ دقیقه پیش از خروج: زمان لازم برای روتین بیداری، نوشیدن آب و آمادگی شخص.</p>
+      </div>
+      <button class="btn btn-primary formula-cta" type="button" onclick="openAppPage('calculator')"><i class="fa-solid fa-calculator"></i> <span id="lblFormulaCta">تست فرمول در ماشین‌حساب</span></button>
+    </section>
+
+    <!-- VIEW: Pre-departure Actions -->
+    <section id="viewActions" class="app-view detail-view actions-view">
+      <div class="detail-topbar">
+        <button class="view-back-btn" onclick="goHome()"><i class="fa-solid fa-arrow-left"></i></button>
+        <strong id="lblActionsPageHeader">اقدامات قبل از خروج</strong>
+      </div>
+      <div class="card actions-main-card">
+        <div class="card-title"><i class="fa-solid fa-person-walking"></i> <span id="lblActionsCard">روتین آماده‌سازی</span></div>
+        <p class="about-text-content" id="lblActionsIntro">این مراحل کوتاه به شما کمک می‌کنند پیش از خروج، روزتان را با آمادگی بیشتری آغاز کنید.</p>
+        <div class="actions-meta">
+          <span class="duration-badge"><i class="fa-solid fa-stopwatch"></i> <span id="lblActionDuration">زمان کل: حدود ۱۰ دقیقه</span></span>
+          <span id="actionsProgressText">۰ از ۴ انجام شده</span>
+        </div>
+        <div class="progress-track"><span id="actionsProgressBar" class="progress-fill"></span></div>
+        <button id="resetActionsBtn" class="actions-reset-btn" type="button"><i class="fa-solid fa-rotate-left"></i> <span id="lblResetActions">شروع دوباره</span></button>
+        <ul class="action-list rich-action-list" id="actionList"></ul>
+        <button id="completeActionsBtn" class="btn btn-primary actions-complete-btn" type="button" disabled><i class="fa-solid fa-rocket"></i> <span id="lblCompleteActions">ثبت و آغاز روز</span></button>
+      </div>
+      <div class="card actions-tip-card">
+        <div class="card-title"><i class="fa-solid fa-lightbulb"></i> <span id="lblActionTipTitle">نکته آمادگی امروز</span></div>
+        <p id="lblActionTip">آمادگی از شب قبل، یک صبح آرام‌تر برای شما می‌سازد.</p>
+      </div>
+    </section>
+
+    <!-- VIEW 2: SETTINGS & PREFERENCES -->
+    <section id="viewSettings" class="app-view more-view">
+      <div class="more-page-title" id="lblMorePageTitle">بیشتر</div>
+      <div class="more-hero">
+        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+        <div><strong id="moreHeroTitle">طلوع‌یاب</strong><span id="moreHeroSubtitle">برنامه‌ریزی ساده و دقیق برای صبح شما</span></div>
+      </div>
+      <div class="card more-settings-card">
+        <div class="card-title"><i class="fa-solid fa-gear" aria-hidden="true"></i> <span id="lblSettingsTitle">تنظیمات کاربری</span></div>
+        <div class="settings-list">
+          <div class="settings-item location-settings-item">
+            <button class="settings-action-card" type="button" onclick="toggleLocationEditor()">
+              <span class="settings-label"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span id="lblLocationCard">موقعیت شما</span></span>
+              <span><span class="setting-value" id="locationValue">انتخاب نشده</span> <i class="fa-solid fa-chevron-left" aria-hidden="true"></i></span>
+            </button>
+            <div class="location-editor" id="locationEditor">
+              <div class="flex-row">
+                <button class="btn btn-primary" id="gpsBtn"><i class="fa-solid fa-satellite-dish" aria-hidden="true"></i> <span id="lblGpsBtn">GPS خودکار</span></button>
+              </div>
+              <div class="search-wrapper" style="margin-top: 12px;">
+                <input type="text" class="search-input" id="citySearch" placeholder="نام شهر را جستجو کنید ..." autocomplete="off">
+                <div class="search-indicator"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+                <button class="search-clear-btn" id="clearSearchBtn" type="button" aria-label="پاک کردن جستجو">×</button>
+                <div class="search-results" id="searchResults"></div>
+              </div>
+              <div id="locationDisplayContainer" class="location-container" style="display: none;">
+                <div class="location-badge"><span id="lblSelectedCity">شهر انتخاب‌شده:</span>&nbsp;<span id="locationDisplay">—</span></div>
+                <button class="btn-clear-loc" id="clearLocationBtn">×</button>
+              </div>
+            </div>
+          </div>
+          <div class="settings-item">
+            <button class="settings-action-card" type="button" onclick="openSettingModal('calendar')">
+              <span class="settings-label"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> <span id="lblDateFormat"></span></span>
+              <span><span class="setting-value" id="calendarValue">—</span> <i class="fa-solid fa-chevron-left" aria-hidden="true"></i></span>
+            </button>
+          </div>
+          <div class="settings-item">
+            <button class="settings-action-card" type="button" onclick="openSettingModal('theme')">
+              <span class="settings-label"><i class="fa-solid fa-moon" aria-hidden="true"></i> <span id="lblThemeSelect"></span></span>
+              <span><span class="setting-value" id="themeValue">—</span> <i class="fa-solid fa-chevron-left" aria-hidden="true"></i></span>
+            </button>
+          </div>
+          <div class="settings-item">
+            <button class="settings-action-card" type="button" onclick="openSettingModal('language')">
+              <span class="settings-label"><i class="fa-solid fa-globe" aria-hidden="true"></i> <span id="lblLangSelect"></span></span>
+              <span><span class="setting-value" id="languageValue">—</span> <i class="fa-solid fa-chevron-left" aria-hidden="true"></i></span>
+            </button>
+          </div>
+        </div>
+        <button class="btn about-menu-btn" type="button" onclick="openAbout()">
+          <span class="about-menu-content"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span id="lblAboutMenu">درباره ما</span></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- VIEW 3: ABOUT -->
+    <section id="viewAbout" class="app-view about-view">
+      <div class="about-header-row">
+        <button class="view-back-btn" type="button" onclick="goBackFromAbout()" aria-label="Back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+        <div class="card-title" style="margin-bottom: 0;"><span id="lblAboutTitle">درباره ما</span></div>
+      </div>
+      <div class="about-brand">
+        <img src="logo.png" alt="طلوع‌یاب" class="about-logo">
+        <h1 id="aboutAppName">طلوع‌یاب</h1>
+      </div>
+      <div class="about-copy">
+        <p id="lblAboutText">طلوع‌یاب یک همراه ساده و دقیق برای هماهنگ‌کردن برنامه صبحگاهی شما با زمان واقعی طلوع خورشید است. با انتخاب شهر، ساعت طلوع، بیداری و خروج به‌صورت متناسب با همان موقعیت محاسبه می‌شوند.</p>
+        <p id="aboutGoalText">🎯 هدف اصلی طلوع‌یاب کمک به کسانی است که می‌خواهند صبح‌ها برای پیاده‌روی یا دویدن به بیرون بروند، زمانی که هوا روشن است اما هنوز گرم نشده. تحقیقات علمی نشان می‌دهد که ورزش در گرما فشار قلبی-عروقی را افزایش می‌دهد: ضربان قلب ۵ تا ۱۵ ضربه در دقیقه بیشتر می‌شود، خون به جای عضلات به سمت پوست هدایت می‌شود و ذخایر گلیکوژن سریع‌تر مصرف می‌شوند. در مقابل، ورزش در هوای خنک باعث بهبود جریان خون به عضلات، کاهش خستگی و افزایش تا دو برابری توان بدنی می‌شود. طلوع‌یاب با محاسبه دقیق زمان طلوع، بهترین لحظه برای شروع فعالیت صبحگاهی شما را پیدا می‌کند.</p>
+        <p id="aboutPrivacyText">اطلاعات موقعیت و تنظیمات شما روی دستگاه خودتان ذخیره می‌شوند. برنامه برای دریافت داده‌های تازه‌ی طلوع و آب‌وهوا فقط در زمان نیاز به اینترنت متصل می‌شود.</p>
+      </div>
+      <div class="about-highlight"><ul><li id="aboutFeature1">محاسبه زمان‌ها بر اساس شهر انتخاب‌شده</li><li id="aboutFeature2">پشتیبانی از تقویم شمسی و میلادی</li><li id="aboutFeature3">حالت روشن، تیره و خودکار</li><li id="aboutFeature4">استفاده آسان در حالت آنلاین و آفلاین</li></ul></div>
+      <h3 class="contact-title" id="aboutAuthorTitle">ارتباط با سازنده</h3>
+      <div class="contact-grid about-contact-grid">
+        <a class="contact-card" href="mailto:mohammad117811@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i> E-mail</a>
+        <a class="contact-card" href="https://mrmr-711.github.io" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i> MrMR-711.github.io</a>
+        <a class="contact-card" href="https://github.com/MrMR-711" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> MrMR-711</a>
+        <a class="contact-card" href="https://t.me/MrMR_711Channel" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i> MrMR_711Channel@</a>
+      </div>
+    </section>
+
+    <!-- Global modal -->
+    <div id="settingsModal" class="modal-overlay" role="dialog" aria-modal="true"><div class="settings-modal"><div id="settingsModalTitle" class="settings-modal-title"></div><div id="settingsModalOptions" class="modal-options"></div></div></div>
+
+    <!-- Bottom Tab Bar -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" onclick="navigateTab('home')" id="tabHome">
+        <span class="nav-item-icon fa-solid fa-house" id="navHomeIcon" aria-hidden="true"></span>
+        <span id="tabHomeLabel">خانه</span>
+      </button>
+      <button class="nav-item" onclick="navigateTab('settings')" id="tabSettings">
+        <span class="nav-item-icon fa-regular fa-rectangle-list" id="navSettingsIcon" aria-hidden="true"></span>
+        <span id="tabSettingsLabel">بیشتر</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- App Scripts (modular, SoC-based) -->
+  <script src="js/state.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/modules/location.js"></script>
+  <script src="js/modules/calculator.js"></script>
+  <script src="js/modules/weather.js"></script>
+  <script src="js/modules/actions.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

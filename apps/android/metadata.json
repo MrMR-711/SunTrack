@@ -1,0 +1,6 @@
+{
+  "name": "SunTrack",
+  "description": "Offline sunrise planning and golden hour tracker application wrapped in Android WebView.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

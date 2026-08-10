@@ -1,0 +1,336 @@
+/* ===== main.css: Fonts, Variables, Reset, Body, App Container ===== */
+
+/* Local fonts: loaded offline; WOFF2 is preferred and WOFF is the fallback. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/inter-400.woff2') format('woff2'),
+       url('../fonts/inter-400.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/inter-500.woff2') format('woff2'),
+       url('../fonts/inter-500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/inter-600.woff2') format('woff2'),
+       url('../fonts/inter-600.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/inter-700.woff2') format('woff2'),
+       url('../fonts/inter-700.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/vazirmatn-400.woff2') format('woff2'),
+       url('../fonts/vazirmatn-400.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/vazirmatn-500.woff2') format('woff2'),
+       url('../fonts/vazirmatn-500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/vazirmatn-700.woff2') format('woff2'),
+       url('../fonts/vazirmatn-700.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/vazirmatn-800.woff2') format('woff2'),
+       url('../fonts/vazirmatn-800.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'AradNL-BlackDots2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AradNL-BlackDots2.woff2') format('woff2'),
+       url('../fonts/AradNL-BlackDots2.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Touche-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Touche-Bold.woff2') format('woff2'),
+       url('../fonts/Touche-Bold.woff') format('woff');
+}
+
+/* ----- Design Tokens & Theme ----- */
+:root {
+  --amber-glow: #FF7631;
+  --honey-bronze: #FF9A5A;
+  --white: #ffffff;
+  --frozen-water: #FFDCC8;
+  --light-sea-green: #FF8C4A;
+  --text-dark: #3f4652;
+  --text-muted: #64748b;
+  --bg-light: #fef8ee;
+  --border-light: #f5e6d3;
+  --card-bg: #fcf3e5;
+  --danger: #ef4444;
+  --success: #22c55e;
+
+  --font-fa: 'Vazirmatn', sans-serif;
+  --font-en: 'Inter', sans-serif;
+  --transition-speed: 0.25s;
+}
+
+/* ----- Dark Theme ----- */
+html { color-scheme: light; }
+html[data-theme="dark"] { color-scheme: dark; }
+html[data-theme="dark"], html[data-theme="dark"] body {
+  --white: #111827; --bg-light: #0b1220; --card-bg: #172033;
+  --text-dark: #f1f5f9; --text-muted: #a8b4c7; --border-light: #29364a;
+  --frozen-water: #3d2817; --light-sea-green: #FF9A5A;
+    --amber-glow: #FF7631; --honey-bronze: #FF9A5A;
+  --amber-glow: #FF7631; --honey-bronze: #FF9A5A;
+}
+html[data-theme="dark"] .app-header, html[data-theme="dark"] .bottom-nav { background: var(--bg-light); }
+html[data-theme="dark"] .result-item-sunrise { background: linear-gradient(135deg, #3c270b, #211b11); border-color: rgba(255, 191, 105, .32); }
+html[data-theme="dark"] .formula-card { background: #111827; }
+html[data-theme="dark"] .loader-overlay { background: rgba(17, 24, 39, .88); }
+html[data-theme="dark"] .temp-warning-box { background: #3b171a; border-color: #6d252b; color: #fecaca; }
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) { color-scheme: dark; }
+  html:not([data-theme]) body {
+    --white: #111827; --bg-light: #0b1220; --card-bg: #172033;
+    --text-dark: #f1f5f9; --text-muted: #a8b4c7; --border-light: #29364a;
+    --frozen-water: #3d2817; --light-sea-green: #FF9A5A;
+    --amber-glow: #FF7631; --honey-bronze: #FF9A5A;
+  }
+  html:not([data-theme]) .app-header, html:not([data-theme]) .bottom-nav { background: var(--bg-light); }
+  html:not([data-theme]) .result-item-sunrise { background: linear-gradient(135deg, #3c270b, #211b11); border-color: rgba(255, 191, 105, .32); }
+  html:not([data-theme]) .formula-card { background: #111827; }
+  html:not([data-theme]) .loader-overlay { background: rgba(17, 24, 39, .88); }
+  html:not([data-theme]) .temp-warning-box { background: #3b171a; border-color: #6d252b; color: #fecaca; }
+}
+
+/* Disable text/image selection throughout the app; form fields stay editable. */
+body, body * { user-select: none; -webkit-user-select: none; }
+input, textarea, [contenteditable="true"] { user-select: text; -webkit-user-select: text; }
+img { -webkit-user-drag: none; user-drag: none; }
+
+/* Hide scrollbar */
+body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  background: transparent !important;
+}
+body {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  overflow-y: auto;
+}
+
+/* ----- Base Reset ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Shared native-like touch feedback for every interactive surface. */
+button, a, [role="button"], .home-feature-card, .settings-action-card, .more-hero,
+.search-result-item, .contact-card, .selector-btn, .modal-option, .btn-clear-loc {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .15s ease, opacity .15s ease, background-color .15s ease, filter .15s ease;
+}
+.home-feature-card.is-pressed, .btn.is-pressed, .more-hero.is-pressed,
+.modal-option.is-pressed, .selector-btn.is-pressed,
+.search-result-item.is-pressed { transform: scale(.97); opacity: .92; }
+.contact-card:active, .contact-card.is-pressed { transform: scale(0.95); filter: brightness(0.88); }
+.settings-action-card.is-pressed, .about-menu-btn.is-pressed,
+.btn-clear-loc.is-pressed { filter: brightness(.85); }
+@media (hover: none), (pointer: coarse) {
+  .btn-primary:hover { background: var(--amber-glow); transform: none; }
+  .search-clear-btn:hover { background: var(--border-light); color: var(--text-muted); }
+  .search-result-item:hover { background: transparent; }
+  .btn-clear-loc:hover { opacity: .8; }
+  .settings-action-card:hover { transform: none; border-color: var(--border-light); }
+  .modal-option:hover { border-color: var(--border-light); color: var(--text-dark); }
+}
+@media (hover: hover) and (pointer: fine) {
+  .contact-card:hover { transform: scale(1.03); filter: brightness(0.94); border-color: rgba(255,118,49,.38); }
+}
+
+body {
+  font-family: var(--font-fa);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+/* Dynamic directions based on language */
+html[dir="rtl"] body { font-family: var(--font-fa); }
+html[dir="ltr"] body { font-family: var(--font-en); }
+
+/* ----- Main App Wrapper ----- */
+.app-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: calc(75px + max(10px, env(safe-area-inset-bottom, 0px)));
+}
+body.button-nav .app-container {
+  padding-bottom: 145px !important;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ----- Content & Views ----- */
+.app-view {
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn var(--transition-speed) ease-in-out forwards;
+}
+.app-view.active { display: flex; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  from { transform: scale(1); filter: drop-shadow(0 0 2px rgba(255, 127, 43, 0.2)); }
+  to { transform: scale(1.1); filter: drop-shadow(0 0 10px rgba(255, 127, 43, 0.6)); }
+}
+
+/* ----- Cards ----- */
+.card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 20px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+  position: relative;
+  overflow: hidden;
+}
+.card-accent { border-top: 4px solid var(--amber-glow); }
+.card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ----- Action Buttons & Inputs ----- */
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  font-family: inherit;
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+.btn-primary {
+  background: var(--amber-glow);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(255, 127, 43, 0.25);
+}
+.btn-primary:hover { background: #e88e0f; transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(1px); }
+
+/* ----- Loader Animations ----- */
+.loader-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 80;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+.loader-overlay.active { display: flex; }
+.spinner {
+  width: 48px; height: 48px;
+  border: 4px solid var(--border-light);
+  border-top-color: var(--amber-glow);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ----- Responsive Adjustments ----- */
+@media (max-width: 480px) {
+  .app-container { box-shadow: none; }
+}
+@media (min-width: 600px) {
+  .app-container { max-width: 800px; box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08); }
+  .home-dashboard { padding: 36px 28px; gap: 24px; }
+  .more-view { padding: 32px 28px; }
+  .app-view { padding: 28px; }
+  .home-page-title { font-size: 28px; }
+}
+@media (min-width: 900px) {
+  .app-container { max-width: 900px; }
+}
