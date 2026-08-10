@@ -4,6 +4,8 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.content.res.Resources
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
@@ -70,19 +72,75 @@ class MainActivity : ComponentActivity() {
         pendingGeoCallback = null
     }
 
+    private fun updateWebViewDarkMode(webView: WebView, isDark: Boolean) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            @Suppress("DEPRECATION")
+            webView.settings.forceDark = if (isDark) WebSettings.FORCE_DARK_ON else WebSettings.FORCE_DARK_OFF
+        }
+        if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+            WebSettingsCompat.setForceDark(
+                webView.settings,
+                if (isDark) WebSettingsCompat.FORCE_DARK_ON else WebSettingsCompat.FORCE_DARK_OFF
+            )
+        }
+        if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
+            WebSettingsCompat.setAlgorithmicDarkeningAllowed(webView.settings, isDark)
+        }
+        if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY)) {
+            WebSettingsCompat.setForceDarkStrategy(
+                webView.settings,
+                WebSettingsCompat.DARK_STRATEGY_PREFER_WEB_THEME_OVER_USER_AGENT_DARKENING
+            )
+        }
+
+        val js = """
+            (function() {
+                var meta = document.querySelector('meta[name="color-scheme"]');
+                if (!meta) {
+                    meta = document.createElement('meta');
+                    meta.name = 'color-scheme';
+                    meta.content = 'light dark';
+                    (document.head || document.documentElement).appendChild(meta);
+                } else {
+                    meta.content = 'light dark';
+                }
+                document.documentElement.style.colorScheme = 'light dark';
+
+                var savedTheme = null;
+                try { savedTheme = JSON.parse(localStorage.getItem('sunrisetracker_theme')); } catch(e) {}
+                var theme = savedTheme || 'auto';
+                if (theme === 'auto') {
+                    if ($isDark) {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                    } else {
+                        document.documentElement.removeAttribute('data-theme');
+                    }
+                }
+            })();
+        """.trimIndent()
+        webView.evaluateJavascript(js, null)
+    }
+
+    private fun isSystemInDarkMode(): Boolean {
+        val resNight = (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+        val appNight = (applicationContext.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+        val sysNight = (Resources.getSystem().configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+        return resNight || appNight || sysNight
+    }
+
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        val isDark = (newConfig.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+        val isDark = isSystemInDarkMode()
         WindowCompat.getInsetsController(window, window.decorView).apply {
             isAppearanceLightNavigationBars = !isDark
             isAppearanceLightStatusBars = !isDark
         }
-        webView?.reload()
+        webView?.let { updateWebViewDarkMode(it, isDark) }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val isDark = (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+        val isDark = isSystemInDarkMode()
 
         enableEdgeToEdge(
             statusBarStyle = if (isDark) SystemBarStyle.dark(Color.TRANSPARENT) else SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
@@ -139,10 +197,7 @@ class MainActivity : ComponentActivity() {
                         isVerticalScrollBarEnabled = false
                         isHorizontalScrollBarEnabled = false
 
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                            @Suppress("DEPRECATION")
-                            settings.forceDark = WebSettings.FORCE_DARK_AUTO
-                        }
+                        updateWebViewDarkMode(this, isDark)
 
                         settings.apply {
                             javaScriptEnabled = true
@@ -157,13 +212,19 @@ class MainActivity : ComponentActivity() {
                             mediaPlaybackRequiresUserGesture = false
                             useWideViewPort = true
                             loadWithOverviewMode = true
-
-                            if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
-                                WebSettingsCompat.setForceDark(this, WebSettingsCompat.FORCE_DARK_AUTO)
-                            }
                         }
 
                         webViewClient = object : WebViewClient() {
+                            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                                super.onPageStarted(view, url, favicon)
+                                view?.let { updateWebViewDarkMode(it, isSystemInDarkMode()) }
+                            }
+
+                            override fun onPageFinished(view: WebView?, url: String?) {
+                                super.onPageFinished(view, url)
+                                view?.let { updateWebViewDarkMode(it, isSystemInDarkMode()) }
+                            }
+
                             override fun shouldInterceptRequest(
                                 view: WebView,
                                 request: WebResourceRequest

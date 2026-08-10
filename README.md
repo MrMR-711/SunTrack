@@ -12,11 +12,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 <p align="center">
-  <img src="docs/icons/logo.png" alt="SunTrack Logo" width="120" height="120">
-</p>
-
-<p align="center" style="font-size: 1.5rem; font-weight: 900; color: #FF7631; margin: 0.5rem 0;">
-  <strong>همراه هوشمند شما برای شروع صبح‌هایی پرانرژی</strong>
+  <img src="docs/banners/Banner-fa.png" alt="SunTrack Logo">
 </p>
 
 ---
@@ -43,6 +39,57 @@
 طلوع‌یاب با محاسبه دقیق زمان طلوع خورشید برای شهر شما، بهترین لحظه برای شروع فعالیت صبحگاهی را پیدا می‌کند.
 
 ---
+
+## ✨ ویژگی‌ها
+
+### 🌍 محاسبه هوشمند بر اساس موقعیت
+
+* انتخاب شهر از پایگاه داده جهانی
+* پشتیبانی از GPS برای تشخیص خودکار موقعیت
+* محاسبه دقیق زمان طلوع برای هر نقطه از جهان
+
+### ⏰ زمان‌بندی دقیق
+
+* زمان طلوع خورشید
+* زمان خروج (۳۰ دقیقه قبل از طلوع)
+* زمان بیداری (۵۵ دقیقه قبل از طلوع)
+
+### 📊 تایم‌لاین معکوس
+
+```text
+۰۴:۲۷ ← بیداری و روتین
+   ↓
+۰۴:۵۲ ← خروج از منزل
+   ↓
+۰۵:۲۲ ← طلوع خورشید 🌅
+```
+
+
+## 🔬 نحوه کار
+
+### فرمول محاسبه
+
+```text
+زمان خروج = طلوع خورشید − ۳۰ دقیقه
+زمان بیداری = زمان خروج − ۲۵ دقیقه
+```
+
+### مثال
+
+فرض کنید طلوع خورشید در تهران ساعت **۰۵:۲۲** باشد.
+
+| مرحله    | زمان  |
+| -------- | ----- |
+| 🌅 طلوع  | ۰۵:۲۲ |
+| 🚪 خروج  | ۰۴:۵۲ |
+| ⏰ بیداری | ۰۴:۲۷ |
+
+---
+
+<details>
+  <summary style="font-weight: bold; font-size: 1.5em;">
+    🎓 توضیحات بیشتر
+  </summary>
 
 ## 🏗 معماری پروژه
 
@@ -95,112 +142,7 @@ SunTrack/
 └── README.md
 ```
 
----
-
-## 🚀 اجرای پروژه
-
-### نسخه وب
-
-به پوشه `apps/web` بروید و فایل `index.html` را در مرورگر اجرا کنید.
-
-### نسخه اندروید
-
-پوشه `apps/android` را با **Android Studio** باز کرده و پروژه را روی شبیه‌ساز یا دستگاه اندرویدی اجرا کنید.
-
----
-
-## ✨ ویژگی‌ها
-
-### 🌍 محاسبه هوشمند بر اساس موقعیت
-
-* انتخاب شهر از پایگاه داده جهانی
-* پشتیبانی از GPS برای تشخیص خودکار موقعیت
-* محاسبه دقیق زمان طلوع برای هر نقطه از جهان
-
-### ⏰ زمان‌بندی دقیق
-
-* زمان طلوع خورشید
-* زمان خروج (۳۰ دقیقه قبل از طلوع)
-* زمان بیداری (۵۵ دقیقه قبل از طلوع)
-
-### 📊 تایم‌لاین معکوس
-
-```text
-۰۴:۲۷ ← بیداری و روتین
-   ↓
-۰۴:۵۲ ← خروج از منزل
-   ↓
-۰۵:۲۲ ← طلوع خورشید 🌅
-```
-
-### 🌤 نمایش وضعیت آب‌وهوا
-
-* دمای فعلی
-* هشدار هوای گرم
-* به‌روزرسانی خودکار اطلاعات
-
-### ⏳ شمارش معکوس زنده
-
-نمایش لحظه‌ای زمان باقی‌مانده تا بیداری.
-
-### 📱 رابط کاربری
-
-* طراحی مدرن
-* حالت روشن و تیره
-* کاملاً ریسپانسیو
-* مناسب تلفن همراه و تبلت
-
-### 🌐 چندزبانه
-
-* 🇮🇷 فارسی (پشتیبانی کامل از راست‌به‌چپ)
-* 🇬🇧 انگلیسی
-
-### 📅 تقویم دوگانه
-
-* شمسی (جلالی)
-* میلادی (گریگوری)
-
-### 📋 چک‌لیست روتین صبحگاهی
-
-* نوشیدن آب
-* حرکات کششی
-* تمرین تنفس
-* بررسی وسایل ضروری
-
-### 🧮 ماشین‌حساب دستی
-
-محاسبه زمان‌ها با وارد کردن دستی ساعت طلوع.
-
-### 📖 راهنمای فرمول محاسبات
-
-توضیح منطق محاسباتی برنامه.
-
-### 💾 ذخیره‌سازی محلی
-
-* ذخیره تنظیمات
-* ذخیره موقعیت
-* پشتیبانی از کار آفلاین
-
----
-
-## 🔬 نحوه کار
-
-### فرمول محاسبه
-
-```text
-زمان خروج = طلوع خورشید − ۳۰ دقیقه
-زمان بیداری = زمان خروج − ۲۵ دقیقه
-```
-
-### مثال
-
-فرض کنید طلوع خورشید در تهران ساعت **۰۵:۲۲** باشد.
-
-| مرحله    | زمان  |
-| -------- | ----- |
-| 🌅 طلوع  | ۰۵:۲۲ |
-| 🚪 خروج  | ۰۴:۵۲ |
-| ⏰ بیداری | ۰۴:۲۷ |
+</details>
 
 ---
 
@@ -213,33 +155,11 @@ SunTrack/
 
 ---
 
-## 📱 استفاده
-
-### گام ۱: انتخاب موقعیت
-
-1. وارد بخش **بیشتر** شوید.
-2. روی **موقعیت شما** بزنید.
-3. شهر موردنظر را انتخاب کنید یا از GPS استفاده کنید.
-
-### گام ۲: مشاهده برنامه طلوع
-
-1. وارد صفحه **خانه** شوید.
-2. زمان‌های محاسبه‌شده را مشاهده کنید.
-3. شمارش معکوس را دنبال کنید.
-
-### گام ۳: آماده‌سازی
-
-1. بخش **اقدامات قبل از خروج** را بررسی کنید.
-2. چک‌لیست صبحگاهی را کامل کنید.
-3. در بهترین زمان از منزل خارج شوید.
-
----
-
 ## 🤝 مشارکت در پروژه
 
 اگر پیشنهادی برای بهبود برنامه دارید یا با مشکلی روبه‌رو شدید، از طریق **Issues** یا **Pull Requests** در GitHub مشارکت کنید.
 
-از گزارش خطاها، پیشنهاد قابلیت‌های جدید و مشارکت در توسعه پروژه استقبال می‌شود.
+از گزارش خطاها، پیشنهاد قابلیت‌های جدید برای توسعه پروژه استقبال می‌شود.
 
 ---
 
@@ -269,6 +189,10 @@ SunTrack/
 
 ---
 
+Sure, here's the updated English version with the Persian changes applied, and the extra sections removed:
+
+---
+
 <details open>
 <summary> 🇺🇸 English </summary>
 
@@ -281,11 +205,7 @@ SunTrack/
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 <p align="center">
-  <img src="docs/icons/logo.png" alt="SunTrack Logo" width="120" height="120">
-</p>
-
-<p align="center" style="font-size: 1.5rem; font-weight: 900; color: #FF7631; margin: 0.5rem 0;">
-  <strong>Your smart companion for energetic mornings</strong>
+  <img src="docs/banners/Banner-en.png" alt="SunTrack Logo">
 </p>
 
 ---
@@ -312,6 +232,58 @@ On the other hand, exercising in cool weather:
 By accurately calculating the sunrise time for your city, SunTrack finds the best moment to start your morning activity.
 
 ---
+
+## ✨ Features
+
+### 🌍 Smart Location-Based Calculation
+
+* Select a city from a global database
+* GPS support for automatic location detection
+* Accurate sunrise calculation for any point on Earth
+
+### ⏰ Precise Timings
+
+* Sunrise time
+* Departure time (30 minutes before sunrise)
+* Wake-up time (55 minutes before sunrise)
+
+### 📊 Reverse Timeline
+
+```text
+04:27 ← Wake-up & routine
+   ↓
+04:52 ← Leave home
+   ↓
+05:22 ← Sunrise 🌅
+```
+
+---
+
+## 🔬 How It Works
+
+### Calculation Formula
+
+```text
+Departure time = Sunrise − 30 minutes
+Wake-up time = Departure time − 25 minutes
+```
+
+### Example
+
+Assume sunrise in Tehran is at **05:22**.
+
+| Step     | Time  |
+| -------- | ----- |
+| 🌅 Sunrise | 05:22 |
+| 🚪 Departure | 04:52 |
+| ⏰ Wake-up | 04:27 |
+
+---
+
+<details>
+  <summary style="font-weight: bold; font-size: 1.5em;">
+    🎓 More Details
+  </summary>
 
 ## 🏗 Project Architecture
 
@@ -364,112 +336,7 @@ SunTrack/
 └── README.md
 ```
 
----
-
-## 🚀 Running the Project
-
-### Web Version
-
-Go to the `apps/web` folder and open `index.html` in your browser.
-
-### Android Version
-
-Open the `apps/android` folder with **Android Studio** and run the project on an emulator or Android device.
-
----
-
-## ✨ Features
-
-### 🌍 Smart Location-Based Calculation
-
-* Select a city from a global database
-* GPS support for automatic location detection
-* Accurate sunrise calculation for any point on Earth
-
-### ⏰ Precise Timings
-
-* Sunrise time
-* Departure time (30 minutes before sunrise)
-* Wake-up time (55 minutes before sunrise)
-
-### 📊 Reverse Timeline
-
-```text
-04:27 ← Wake-up & routine
-   ↓
-04:52 ← Leave home
-   ↓
-05:22 ← Sunrise 🌅
-```
-
-### 🌤 Weather Status Display
-
-* Current temperature
-* Hot weather warning
-* Automatic information update
-
-### ⏳ Live Countdown
-
-Real-time display of time remaining until wake-up.
-
-### 📱 User Interface
-
-* Modern design
-* Light and dark mode
-* Fully responsive
-* Suitable for mobile and tablet
-
-### 🌐 Multi-language
-
-* 🇮🇷 Persian (full RTL support)
-* 🇬🇧 English
-
-### 📅 Dual Calendar
-
-* Solar (Jalali)
-* Gregorian
-
-### 📋 Morning Routine Checklist
-
-* Drink water
-* Stretching exercises
-* Breathing practice
-* Check essential items
-
-### 🧮 Manual Calculator
-
-Calculate times by manually entering the sunrise hour.
-
-### 📖 Calculation Formula Guide
-
-Explanation of the app's computational logic.
-
-### 💾 Local Storage
-
-* Save settings
-* Save location
-* Offline support
-
----
-
-## 🔬 How It Works
-
-### Calculation Formula
-
-```text
-Departure time = Sunrise − 30 minutes
-Wake-up time = Departure time − 25 minutes
-```
-
-### Example
-
-Assume sunrise in Tehran is at **05:22**.
-
-| Step     | Time  |
-| -------- | ----- |
-| 🌅 Sunrise | 05:22 |
-| 🚪 Departure | 04:52 |
-| ⏰ Wake-up | 04:27 |
+</details>
 
 ---
 
@@ -479,28 +346,6 @@ SunTrack uses the following services to retrieve information:
 
 * **Open-Meteo API** for sunrise times and weather data
 * **Nominatim (OpenStreetMap)** for city search and geocoding
-
----
-
-## 📱 Usage
-
-### Step 1: Select Location
-
-1. Go to the **More** section.
-2. Tap on **Your Location**.
-3. Select a city or use GPS.
-
-### Step 2: View Sunrise Schedule
-
-1. Go to the **Home** page.
-2. View the calculated times.
-3. Follow the countdown.
-
-### Step 3: Preparation
-
-1. Check the **Pre‑departure actions** section.
-2. Complete the morning checklist.
-3. Leave home at the best time.
 
 ---
 

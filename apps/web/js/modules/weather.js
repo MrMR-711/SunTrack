@@ -73,17 +73,42 @@
     if (S.countdownInterval) clearInterval(S.countdownInterval);
     const elTimerContainer = document.getElementById('timerContainer');
     const elCountdown = document.getElementById('countdown');
+    const elTimerLabel = document.getElementById('lblCountdown');
     const elHomeCountdown = document.getElementById('homeCountdown');
+    const elHomeCountdownLabel = document.getElementById('lblHomeCountdown');
     function run() {
       const now = new Date();
       const distance = wakeDate.getTime() - now.getTime();
       if (distance <= 0) {
+        clearInterval(S.countdownInterval);
+        // Check if we're offline and using stale cached data (more than 24h old)
+        const cachedSunrise = S.weatherCache?.rawSunrise;
+        const isStaleCache = !S.isOnline && cachedSunrise && (now - cachedSunrise > 24 * 60 * 60 * 1000);
+        if (isStaleCache) {
+          // Show offline message instead of hiding
+          const offlineMsg = S.currentLanguage === 'fa'
+            ? 'لطفاً به اینترنت متصل شوید تا زمان طلوع جدید بارگیری شود'
+            : 'Please connect to the internet to reload sunrise time';
+          elTimerContainer.style.display = 'flex';
+          elTimerLabel.textContent = S.currentLanguage === 'fa' ? '️ نیاز به اتصال اینترنت' : '⚠️ Internet connection needed';
+          elCountdown.textContent = offlineMsg;
+          elCountdown.style.fontSize = '13px';
+          elHomeCountdown.textContent = offlineMsg;
+          elHomeCountdown.style.fontSize = '13px';
+          if (elHomeCountdownLabel) elHomeCountdownLabel.textContent = '';
+          return;
+        }
+        // Normal case: wake time has passed today
         elTimerContainer.style.display = 'none';
         elHomeCountdown.textContent = '--:--:--';
-        clearInterval(S.countdownInterval);
+        elHomeCountdown.style.fontSize = '';
+        if (elHomeCountdownLabel) elHomeCountdownLabel.textContent = S.currentLanguage === 'fa' ? 'مانده تا بیداری' : 'Until Wake-up';
         return;
       }
       elTimerContainer.style.display = 'flex';
+      elCountdown.style.fontSize = '';
+      elHomeCountdown.style.fontSize = '';
+      if (elHomeCountdownLabel) elHomeCountdownLabel.textContent = S.currentLanguage === 'fa' ? 'مانده تا بیداری' : 'Until Wake-up';
       const hours = Math.floor(distance / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
