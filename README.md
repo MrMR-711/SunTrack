@@ -5,11 +5,10 @@
 
 # طلوع‌یاب | SunTrack
 
-[![Made with HTML](https://img.shields.io/badge/Made%20with-HTML-orange)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![Also uses Kotlin](https://img.shields.io/badge/Also%20uses-Kotlin-purple)](https://kotlinlang.org)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/MrMR-711/SunTrack/releases)
-[![Platform](https://img.shields.io/badge/platform-Android-brightgreen)](https://github.com/MrMR-711/SunTrack)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Built with](https://img.shields.io/badge/Built_With-HTML_&_Kotlin-FF6B00?style=for-the-badge&logo=code&logoColor=white)
+[![Version](https://img.shields.io/badge/version-1.0.0-F7931E?style=for-the-badge)](https://github.com/MrMR-711/SunTrack/releases)
+[![Platform](https://img.shields.io/badge/platform-Android-00C853?style=for-the-badge&logo=android&logoColor=white)](https://github.com/MrMR-711/SunTrack)
+[![License](https://img.shields.io/badge/License-Apache%202.0-FF4500?style=for-the-badge&logo=apache&logoColor=white)](https://opensource.org/licenses/Apache-2.0)
 
 <p align="center">
   <img src="docs/banners/Banner-fa.png" alt="SunTrack Logo">
@@ -194,11 +193,10 @@ SunTrack/
 
 # SunTrack
 
-[![Made with HTML](https://img.shields.io/badge/Made%20with-HTML-orange)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![Also uses Kotlin](https://img.shields.io/badge/Also%20uses-Kotlin-purple)](https://kotlinlang.org)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/MrMR-711/SunTrack/releases)
-[![Platform](https://img.shields.io/badge/platform-Android-brightgreen)](https://github.com/MrMR-711/SunTrack)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Built with](https://img.shields.io/badge/Built_With-HTML_&_Kotlin-FF6B00?style=for-the-badge&logo=code&logoColor=white)
+[![Version](https://img.shields.io/badge/version-1.0.0-F7931E?style=for-the-badge)](https://github.com/MrMR-711/SunTrack/releases)
+[![Platform](https://img.shields.io/badge/platform-Android-00C853?style=for-the-badge&logo=android&logoColor=white)](https://github.com/MrMR-711/SunTrack)
+[![License](https://img.shields.io/badge/License-Apache%202.0-FF4500?style=for-the-badge&logo=apache&logoColor=white)](https://opensource.org/licenses/Apache-2.0)
 
 <p align="center">
   <img src="docs/banners/Banner-en.png" alt="SunTrack Logo">
