@@ -8,9 +8,11 @@
 <p>
   <img src="https://img.shields.io/badge/Built_With-555555?style=for-the-badge" alt="Built With"><img src="https://img.shields.io/badge/HTML-FF6B00?style=for-the-badge&logo=html5&logoColor=white" alt="HTML"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin">
   <a href="https://github.com/MrMR-711/SunTrack/releases"><img src="https://img.shields.io/badge/Version-V1.0.0-F7931E?style=for-the-badge&logo=github&logoColor=white" alt="Version"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-View-FF6B00?style=for-the-badge&logo=keepachangelog&logoColor=white" alt="Changelog"></a>
   <a href="https://github.com/MrMR-711/SunTrack"><img src="https://img.shields.io/badge/Platform-Android_7.0%2B-00C853?style=for-the-badge&logo=android&logoColor=white" alt="Platform"></a>
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-FF4500?style=for-the-badge&logo=apache&logoColor=white" alt="License"></a>
 </p>
+
 
 <p align="center">
   <img src="docs/banners/Banner-fa.png" alt="SunTrack Banner">
@@ -38,6 +40,14 @@
 - <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> تجربه ورزشی لذت‌بخش‌تر
 
 طلوع‌یاب با محاسبه دقیق زمان طلوع خورشید برای شهر شما، بهترین لحظه برای شروع فعالیت صبحگاهی را پیدا می‌کند.
+
+## <img src="docs/readme-svg/image.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> اسکرین شات ها
+
+<p align="center">
+  <img src="docs/screenshots/fa/1.png" width="30%" alt="SunTrack Screenshot 1">
+  <img src="docs/screenshots/fa/2.png" width="30%" alt="SunTrack Screenshot 2">
+  <img src="docs/screenshots/fa/3.png" width="30%" alt="SunTrack Screenshot 3">
+</p>
 
 ---
 
@@ -200,6 +210,7 @@ SunTrack/
 <p>
   <img src="https://img.shields.io/badge/Built_With-555555?style=for-the-badge" alt="Built With"><img src="https://img.shields.io/badge/HTML-FF6B00?style=for-the-badge&logo=html5&logoColor=white" alt="HTML"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin">
   <a href="https://github.com/MrMR-711/SunTrack/releases"><img src="https://img.shields.io/badge/Version-V1.0.0-F7931E?style=for-the-badge&logo=github&logoColor=white" alt="Version"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-View-FF6B00?style=for-the-badge&logo=keepachangelog&logoColor=white" alt="Changelog"></a>
   <a href="https://github.com/MrMR-711/SunTrack"><img src="https://img.shields.io/badge/Platform-Android_7.0%2B-00C853?style=for-the-badge&logo=android&logoColor=white" alt="Platform"></a>
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-FF4500?style=for-the-badge&logo=apache&logoColor=white" alt="License"></a>
 </p>
@@ -230,6 +241,16 @@ On the other hand, exercising in cool weather:
 - <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Provides a more enjoyable exercise experience
 
 By accurately calculating the sunrise time for your city, SunTrack finds the best moment to start your morning activity.
+
+---
+
+## <img src="docs/readme-svg/image.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/en/1.png" width="30%" alt="SunTrack Screenshot 1">
+  <img src="docs/screenshots/en/2.png" width="30%" alt="SunTrack Screenshot 2">
+  <img src="docs/screenshots/en/3.png" width="30%" alt="SunTrack Screenshot 3">
+</p>
 
 ---
 
