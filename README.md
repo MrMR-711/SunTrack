@@ -3,16 +3,17 @@
 
 <div dir="rtl">
 
+<br>
+
 # طلوع‌یاب | SunTrack
 
 <p>
   <img src="https://img.shields.io/badge/Built_With-555555?style=for-the-badge" alt="Built With"><img src="https://img.shields.io/badge/HTML-FF6B00?style=for-the-badge&logo=html5&logoColor=white" alt="HTML"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin">
   <a href="https://github.com/MrMR-711/SunTrack/releases"><img src="https://img.shields.io/badge/Version-V1.0.0-F7931E?style=for-the-badge&logo=github&logoColor=white" alt="Version"></a>
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-View-FF6B00?style=for-the-badge&logo=keepachangelog&logoColor=white" alt="Changelog"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-View-D0FF00?style=for-the-badge&logo=keepachangelog&logoColor=white" alt="Changelog"></a>
   <a href="https://github.com/MrMR-711/SunTrack"><img src="https://img.shields.io/badge/Platform-Android_7.0%2B-00C853?style=for-the-badge&logo=android&logoColor=white" alt="Platform"></a>
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-FF4500?style=for-the-badge&logo=apache&logoColor=white" alt="License"></a>
 </p>
-
 
 <p align="center">
   <img src="docs/banners/Banner-fa.png" alt="SunTrack Banner">
@@ -205,12 +206,14 @@ SunTrack/
 
 <div dir="ltr">
 
+<br>
+
 # SunTrack
 
 <p>
   <img src="https://img.shields.io/badge/Built_With-555555?style=for-the-badge" alt="Built With"><img src="https://img.shields.io/badge/HTML-FF6B00?style=for-the-badge&logo=html5&logoColor=white" alt="HTML"><img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin">
   <a href="https://github.com/MrMR-711/SunTrack/releases"><img src="https://img.shields.io/badge/Version-V1.0.0-F7931E?style=for-the-badge&logo=github&logoColor=white" alt="Version"></a>
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-View-FF6B00?style=for-the-badge&logo=keepachangelog&logoColor=white" alt="Changelog"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-View-D0FF00?style=for-the-badge&logo=keepachangelog&logoColor=white" alt="Changelog"></a>
   <a href="https://github.com/MrMR-711/SunTrack"><img src="https://img.shields.io/badge/Platform-Android_7.0%2B-00C853?style=for-the-badge&logo=android&logoColor=white" alt="Platform"></a>
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache_2.0-FF4500?style=for-the-badge&logo=apache&logoColor=white" alt="License"></a>
 </p>
