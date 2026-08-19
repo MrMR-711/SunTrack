@@ -1,9 +1,10 @@
 <details name="language" dir="ltr"> 
-<summary> <img src="docs/readme-svg/languages.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> فارسی </summary>
+<summary> <img src="docs/readme-svg/languages.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> فارسی </summary>
 
 <div dir="rtl">
 
-<br>
+
+
 
 # طلوع‌یاب | SunTrack
 
@@ -21,28 +22,28 @@
 
 ---
 
-## <img src="docs/readme-svg/book.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> درباره پروژه
+## <img src="docs/readme-svg/book.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> درباره پروژه
 
 **طلوع‌یاب (SunTrack)** یک اپلیکیشن وب پیشرو (PWA) است که با الهام از علوم ورزشی و فیزیولوژی بدن طراحی شده است. هدف اصلی این برنامه کمک به افرادی است که می‌خواهند صبح‌ها برای پیاده‌روی یا دویدن به بیرون بروند، **زمانی که هوا روشن است اما هنوز گرم نشده**.
 
-### <img src="docs/readme-svg/target.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> چرا طلوع‌یاب؟
+### <img src="docs/readme-svg/target.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> چرا طلوع‌یاب؟
 
 تحقیقات علمی نشان می‌دهد که ورزش در گرما فشار قلبی-عروقی را به شدت افزایش می‌دهد:
 
-- <img src="docs/readme-svg/heart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> ضربان قلب **۵ تا ۱۵ ضربه در دقیقه** بیشتر می‌شود
-- <img src="docs/readme-svg/droplet.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> خون به جای عضلات به سمت پوست هدایت می‌شود
-- <img src="docs/readme-svg/dna.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> ذخایر گلیکوژن سریع‌تر مصرف می‌شوند
-- <img src="docs/readme-svg/zap.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> خستگی زودرس و کاهش عملکرد تا **۵۰٪**
+- <img src="docs/readme-svg/heart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> ضربان قلب **۵ تا ۱۵ ضربه در دقیقه** بیشتر می‌شود
+- <img src="docs/readme-svg/droplet.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> خون به جای عضلات به سمت پوست هدایت می‌شود
+- <img src="docs/readme-svg/dna.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> ذخایر گلیکوژن سریع‌تر مصرف می‌شوند
+- <img src="docs/readme-svg/zap.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> خستگی زودرس و کاهش عملکرد تا **۵۰٪**
 
 در مقابل، ورزش در هوای خنک باعث:
-- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> بهبود جریان خون به عضلات
-- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> کاهش خستگی
-- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> افزایش تا **دو برابری** توان بدنی
-- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> تجربه ورزشی لذت‌بخش‌تر
+- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> بهبود جریان خون به عضلات
+- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> کاهش خستگی
+- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> افزایش تا **دو برابری** توان بدنی
+- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> تجربه ورزشی لذت‌بخش‌تر
 
 طلوع‌یاب با محاسبه دقیق زمان طلوع خورشید برای شهر شما، بهترین لحظه برای شروع فعالیت صبحگاهی را پیدا می‌کند.
 
-## <img src="docs/readme-svg/image.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> اسکرین شات ها
+## <img src="docs/readme-svg/image.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> اسکرین شات ها
 
 <p align="center">
   <img src="docs/screenshots/fa/1.png" width="30%" alt="SunTrack Screenshot 1">
@@ -52,32 +53,32 @@
 
 ---
 
-## <img src="docs/readme-svg/sparkles.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> ویژگی‌ها
+## <img src="docs/readme-svg/sparkles.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> ویژگی‌ها
 
-### <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> محاسبه هوشمند بر اساس موقعیت
+### <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> محاسبه هوشمند بر اساس موقعیت
 
 * انتخاب شهر از پایگاه داده جهانی
 * پشتیبانی از GPS برای تشخیص خودکار موقعیت
 * محاسبه دقیق زمان طلوع برای هر نقطه از جهان
 
-### <img src="docs/readme-svg/alarm-clock.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> زمان‌بندی دقیق
+### <img src="docs/readme-svg/alarm-clock.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> زمان‌بندی دقیق
 
 * زمان طلوع خورشید
 * زمان خروج (۳۰ دقیقه قبل از طلوع)
 * زمان بیداری (۵۵ دقیقه قبل از طلوع)
 
-### <img src="docs/readme-svg/bar-chart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> تایم‌لاین معکوس
+### <img src="docs/readme-svg/bar-chart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> تایم‌لاین معکوس
 
 ```text
 ۰۴:۲۷ ← بیداری و روتین
    ↓
 ۰۴:۵۲ ← خروج از منزل
    ↓
-۰۵:۲۲ ← طلوع خورشید <img src="docs/readme-svg/sunrise.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;">
+۰۵:۲۲ ← طلوع خورشید <img src="docs/readme-svg/sunrise.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;">
 ```
 
 
-## <img src="docs/readme-svg/microscope.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> نحوه کار
+## <img src="docs/readme-svg/microscope.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> نحوه کار
 
 ### فرمول محاسبه
 
@@ -92,18 +93,18 @@
 
 | مرحله    | زمان  |
 | -------- | ----- |
-| <img src="docs/readme-svg/sunrise.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> طلوع  | ۰۵:۲۲ |
-| <img src="docs/readme-svg/door.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> خروج  | ۰۴:۵۲ |
-| <img src="docs/readme-svg/alarm-clock.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> بیداری | ۰۴:۲۷ |
+| <img src="docs/readme-svg/sunrise.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> طلوع  | ۰۵:۲۲ |
+| <img src="docs/readme-svg/door.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> خروج  | ۰۴:۵۲ |
+| <img src="docs/readme-svg/alarm-clock.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> بیداری | ۰۴:۲۷ |
 
 ---
 
 <details>
   <summary style="font-weight: bold; font-size: 1.5em;">
-    <img src="docs/readme-svg/graduation.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> توضیحات بیشتر
+    <img src="docs/readme-svg/info.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> توضیحات بیشتر
   </summary>
 
-## <img src="docs/readme-svg/building.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> معماری پروژه
+## <img src="docs/readme-svg/building.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> معماری پروژه
 
 **طلوع‌یاب (SunTrack)** از ابتدا با این هدف طراحی و توسعه داده شده است که در قالب یک **اپلیکیشن اندروید مبتنی بر WebView** منتشر شود. به همین دلیل، هسته اصلی برنامه به‌صورت **Vanilla HTML، CSS و JavaScript** توسعه یافته و رابط کاربری، منطق برنامه و منابع پروژه همگی در همین بخش قرار دارند.
 
@@ -121,7 +122,7 @@ Vanilla HTML / CSS / JavaScript
 
 ---
 
-## <img src="docs/readme-svg/tools.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> فناوری‌های استفاده‌شده
+## <img src="docs/readme-svg/tools.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> فناوری‌های استفاده‌شده
 
 ### هسته برنامه
 - HTML5
@@ -140,7 +141,7 @@ Vanilla HTML / CSS / JavaScript
 
 ---
 
-## <img src="docs/readme-svg/folder.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> ساختار پروژه
+## <img src="docs/readme-svg/folder.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> ساختار پروژه
 
 ```text
 SunTrack/
@@ -158,7 +159,7 @@ SunTrack/
 
 ---
 
-## <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> منابع داده
+## <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> منابع داده
 
 طلوع‌یاب برای دریافت اطلاعات از سرویس‌های زیر استفاده می‌کند:
 
@@ -167,7 +168,7 @@ SunTrack/
 
 ---
 
-## <img src="docs/readme-svg/handshake.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> مشارکت در پروژه
+## <img src="docs/readme-svg/handshake.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> مشارکت در پروژه
 
 اگر پیشنهادی برای بهبود برنامه دارید یا با مشکلی روبه‌رو شدید، از طریق **Issues** یا **Pull Requests** در GitHub مشارکت کنید.
 
@@ -175,7 +176,7 @@ SunTrack/
 
 ---
 
-## <img src="docs/readme-svg/file.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> مجوز
+## <img src="docs/readme-svg/scale.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> مجوز
 
 این پروژه تحت مجوز **Apache License 2.0** منتشر شده است.
 
@@ -183,17 +184,17 @@ SunTrack/
 
 ---
 
-## <img src="docs/readme-svg/phone.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> ارتباط با سازنده
+## <img src="docs/readme-svg/phone.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> ارتباط با سازنده
 
-* <img src="docs/readme-svg/mail.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> ایمیل: [mohammad117811@gmail.com](mailto:mohammad117811@gmail.com)
-* <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> وب‌سایت: https://mrmr-711.github.io
-* <img src="docs/readme-svg/laptop.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> گیتهاب: https://github.com/MrMR-711
-* <img src="docs/readme-svg/smartphone.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> تلگرام: https://t.me/MrMR_711Channel
+* <img src="docs/readme-svg/mail.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> <a href="mailto:mohammad117811@gmail.com">ایمیل</a>
+* <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> <a href="https://mrmr-711.github.io">وب‌سایت</a>
+* <img src="docs/readme-svg/github.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> <a href="https://github.com/MrMR-711">گیتهاب</a>
+* <img src="docs/readme-svg/telegram.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> <a href="https://t.me/MrMR_711Channel">تلگرام</a>
 
 ---
 
 <p align="center">
-ساخته شده با <img src="docs/readme-svg/heart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> برای صبح‌هایی بهتر
+ساخته شده با <img src="docs/readme-svg/heart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> برای صبح‌هایی بهتر
 </p>
 
 </div>
@@ -202,11 +203,12 @@ SunTrack/
 ---
 
 <details open name="language" dir="ltr"> 
-<summary> <img src="docs/readme-svg/languages.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> English </summary>
+<summary> <img src="docs/readme-svg/languages.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> English </summary>
 
 <div dir="ltr">
 
-<br>
+
+
 
 # SunTrack
 
@@ -224,30 +226,30 @@ SunTrack/
 
 ---
 
-## <img src="docs/readme-svg/book.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> About the Project
+## <img src="docs/readme-svg/book.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> About the Project
 
 **SunTrack** is a progressive web application (PWA) designed with inspiration from sports science and body physiology. Its primary goal is to help people who want to go out for a walk or run in the morning **when it is bright but not yet hot**.
 
-### <img src="docs/readme-svg/target.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Why SunTrack?
+### <img src="docs/readme-svg/target.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Why SunTrack?
 
 Scientific research shows that exercising in the heat significantly increases cardiovascular strain:
 
-- <img src="docs/readme-svg/heart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Heart rate increases by **5–15 beats per minute**
-- <img src="docs/readme-svg/droplet.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Blood is directed to the skin instead of muscles
-- <img src="docs/readme-svg/dna.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Glycogen stores are depleted faster
-- <img src="docs/readme-svg/zap.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Early fatigue and performance drop by up to **50%**
+- <img src="docs/readme-svg/heart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Heart rate increases by **5–15 beats per minute**
+- <img src="docs/readme-svg/droplet.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Blood is directed to the skin instead of muscles
+- <img src="docs/readme-svg/dna.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Glycogen stores are depleted faster
+- <img src="docs/readme-svg/zap.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Early fatigue and performance drop by up to **50%**
 
 On the other hand, exercising in cool weather:
-- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Improves blood flow to muscles
-- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Reduces fatigue
-- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Increases physical capacity by **up to two times**
-- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Provides a more enjoyable exercise experience
+- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Improves blood flow to muscles
+- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Reduces fatigue
+- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Increases physical capacity by **up to two times**
+- <img src="docs/readme-svg/check-circle.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Provides a more enjoyable exercise experience
 
 By accurately calculating the sunrise time for your city, SunTrack finds the best moment to start your morning activity.
 
 ---
 
-## <img src="docs/readme-svg/image.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Screenshots
+## <img src="docs/readme-svg/image.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Screenshots
 
 <p align="center">
   <img src="docs/screenshots/en/1.png" width="30%" alt="SunTrack Screenshot 1">
@@ -257,33 +259,33 @@ By accurately calculating the sunrise time for your city, SunTrack finds the bes
 
 ---
 
-## <img src="docs/readme-svg/sparkles.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Features
+## <img src="docs/readme-svg/sparkles.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Features
 
-### <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Smart Location-Based Calculation
+### <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Smart Location-Based Calculation
 
 * Select a city from a global database
 * GPS support for automatic location detection
 * Accurate sunrise calculation for any point on Earth
 
-### <img src="docs/readme-svg/alarm-clock.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Precise Timings
+### <img src="docs/readme-svg/alarm-clock.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Precise Timings
 
 * Sunrise time
 * Departure time (30 minutes before sunrise)
 * Wake-up time (55 minutes before sunrise)
 
-### <img src="docs/readme-svg/bar-chart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Reverse Timeline
+### <img src="docs/readme-svg/bar-chart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Reverse Timeline
 
 ```text
 04:27 ← Wake-up & routine
    ↓
 04:52 ← Leave home
    ↓
-05:22 ← Sunrise <img src="docs/readme-svg/sunrise.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;">
+05:22 ← Sunrise <img src="docs/readme-svg/sunrise.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;">
 ```
 
 ---
 
-## <img src="docs/readme-svg/microscope.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> How It Works
+## <img src="docs/readme-svg/microscope.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> How It Works
 
 ### Calculation Formula
 
@@ -298,18 +300,18 @@ Assume sunrise in Tehran is at **05:22**.
 
 | Step     | Time  |
 | -------- | ----- |
-| <img src="docs/readme-svg/sunrise.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Sunrise | 05:22 |
-| <img src="docs/readme-svg/door.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Departure | 04:52 |
-| <img src="docs/readme-svg/alarm-clock.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Wake-up | 04:27 |
+| <img src="docs/readme-svg/sunrise.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Sunrise | 05:22 |
+| <img src="docs/readme-svg/door.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Departure | 04:52 |
+| <img src="docs/readme-svg/alarm-clock.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Wake-up | 04:27 |
 
 ---
 
 <details>
   <summary style="font-weight: bold; font-size: 1.5em;">
-    <img src="docs/readme-svg/graduation.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> More Details
+    <img src="docs/readme-svg/info.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> More Details
   </summary>
 
-## <img src="docs/readme-svg/building.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Project Architecture
+## <img src="docs/readme-svg/building.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Project Architecture
 
 **SunTrack** has been designed and developed from the start to be released as an **Android application based on WebView**. Therefore, the core of the app is built with **Vanilla HTML, CSS, and JavaScript**, and the user interface, application logic, and project resources are all contained in this core.
 
@@ -327,7 +329,7 @@ Vanilla HTML / CSS / JavaScript
 
 ---
 
-## <img src="docs/readme-svg/tools.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Technologies Used
+## <img src="docs/readme-svg/tools.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Technologies Used
 
 ### App Core
 - HTML5
@@ -346,7 +348,7 @@ Vanilla HTML / CSS / JavaScript
 
 ---
 
-## <img src="docs/readme-svg/folder.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Project Structure
+## <img src="docs/readme-svg/folder.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Project Structure
 
 ```text
 SunTrack/
@@ -364,7 +366,7 @@ SunTrack/
 
 ---
 
-## <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Data Sources
+## <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Data Sources
 
 SunTrack uses the following services to retrieve information:
 
@@ -373,7 +375,7 @@ SunTrack uses the following services to retrieve information:
 
 ---
 
-## <img src="docs/readme-svg/handshake.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Contributing
+## <img src="docs/readme-svg/handshake.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Contributing
 
 If you have suggestions for improvement or encounter any issues, please contribute via **Issues** or **Pull Requests** on GitHub.
 
@@ -381,7 +383,7 @@ We welcome bug reports, feature suggestions, and contributions to the project de
 
 ---
 
-## <img src="docs/readme-svg/file.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> License
+## <img src="docs/readme-svg/scale.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> License
 
 This project is released under the **Apache License 2.0**.
 
@@ -389,17 +391,17 @@ For more details, see the **LICENSE** file.
 
 ---
 
-## <img src="docs/readme-svg/phone.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Contact the Developer
+## <img src="docs/readme-svg/phone.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> Contact the Developer
 
-* <img src="docs/readme-svg/mail.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Email: [mohammad117811@gmail.com](mailto:mohammad117811@gmail.com)
-* <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Website: https://mrmr-711.github.io
-* <img src="docs/readme-svg/laptop.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> GitHub: https://github.com/MrMR-711
-* <img src="docs/readme-svg/smartphone.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> Telegram: https://t.me/MrMR_711Channel
+* <img src="docs/readme-svg/mail.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> <a href="mailto:mohammad117811@gmail.com">Email</a>
+* <img src="docs/readme-svg/globe.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> <a href="https://mrmr-711.github.io">Website</a>
+* <img src="docs/readme-svg/github.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> <a href="https://github.com/MrMR-711">GitHub</a>
+* <img src="docs/readme-svg/telegram.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> <a href="https://t.me/MrMR_711Channel">Telegram</a>
 
 ---
 
 <p align="center">
-Made with <img src="docs/readme-svg/heart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;"> for better mornings
+Made with <img src="docs/readme-svg/heart.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"> for better mornings
 </p>
 
 </div>
