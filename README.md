@@ -307,7 +307,7 @@ Assume sunrise in Tehran is at **05:22**.
 ---
 
 <details>
-  <summary style="font-weight: bold; font-size: 1.5em;">
+  <summary style="font-weight: bold; font-size: 2em;">
     <a href="#!"><img src="docs/readme-svg/info.svg" width="20" height="20" alt="" style="vertical-align:middle;display:inline-block;margin:0 4px 2px 0;pointer-events:none;"></a> More Details
   </summary>
 
